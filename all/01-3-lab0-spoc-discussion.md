@@ -107,7 +107,7 @@ SETGATE(intr, 0,1,2,3);
 ```
 请问执行上述指令后， intr的值是多少？
 
-- [x]  0x0000 E000 0001 0002
+- [x]  0x0000 EE00 0001 0002
 
 > https://github.com/chyyuu/ucore_lab/blob/master/related_info/lab0/lab0_ex3.c
 
