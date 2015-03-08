@@ -114,7 +114,81 @@ SETGATE(intr, 0,1,2,3);
 请分析 [list.h](https://github.com/chyyuu/ucore_lab/blob/master/labcodes/lab2/libs/list.h)内容中大致的含义，并能include这个文件，利用其结构和功能编写一个数据结构链表操作的小C程序
 - [x]  
 
-> 
+> #include <stdio.h>
+#include <string.h>
+#include "list.h"
+
+struct Student
+{
+  list_entry_t node;
+  int age;
+  char name[20];
+  Student()
+  {
+    age = 20;
+    strcpy(name, "");
+    list_init(&node);
+  }
+  Student(const char nname[], const int& aage = 20)
+  {
+    age = aage;
+    strcpy(name, nname);
+    list_init(&node);
+  }
+  void PrintInfo()
+  {
+    printf("name: %s\n", name);
+    printf("age: %d\n", age);
+  }
+  void PrintCurrent(Student* head)
+  {
+    if (this == head)
+      return;
+    PrintInfo();
+    Student* next = (Student*)(list_next(&node));
+    next->PrintCurrent(head);
+  }
+  void PrintAll()
+  {
+    PrintInfo();
+    Student* next = (Student*)(list_next(&node));
+    next->PrintCurrent(this);
+  }
+  void AddAfter(Student* student)
+  {
+    list_add_after(&(student->node), &node);
+  }
+  void Delete()
+  {
+    list_del(&node);
+  }
+  Student* Next()
+  {
+    return (Student*)list_next(&node);
+  }
+  Student* Previous()
+  {
+    return (Student*)list_prev(&node);
+  }
+};
+
+int main()
+{
+  Student student1("apple", 15), student2("banana", 18)
+          ,student3("peach", 20), student4("lemon", 22);
+  student1.PrintAll();
+  printf("\n");
+  student2.AddAfter(&student1);
+  student3.AddAfter(&student2);
+  student1.PrintAll();
+  printf("\n");
+  student2.Delete();
+  student4.AddAfter(&student1);
+  student1.PrintAll(); 
+  printf("\n");
+  return 0;
+}
+
 
 ---
 
