@@ -30,25 +30,20 @@
  1. 以ucore lab8的answer为例，uCore的系统调用有哪些？大致的功能分类有哪些？(w2l1)
  
  ```
- 
-  + 采分点：说明了ucore的大致数量（二十几个），说明了ucore系统调用的主要分类（文件操作，进程管理，内存管理等）
-  - 答案没有涉及上述两个要点；（0分）
-  - 答案对上述两个要点中的某一个要点进行了正确阐述（1分）
-  - 答案对上述两个要点进行了正确阐述（2分）
-  - 答案除了对上述两个要点都进行了正确阐述外，还进行了扩展和更丰富的说明（3分）
+	在ucore中syscall一共有22个系统调用。按功能分类有：
+	进程管理：sys_exit, sys_fork, sys_wait, sys_exec, sys_yield, sys_kill, sys_getpid, sys_sleep.
+	文件系统控制：sys_pgdir, sys_gettime, sys_open, sys_close, sys_read, sys_write, sys_seek, sys_fstat, sys_dup, sys_getdirentry.
+ 内存管理：sys_lab6_set_priority, sys_fsync, sys_getcwd, sys_putc.
  ```
  
 ## 3.4 linux系统调用分析
  1. 通过分析[lab1_ex0](https://github.com/chyyuu/ucore_lab/blob/master/related_info/lab1/lab1-ex0.md)了解Linux应用的系统调用编写和含义。(w2l1)
  
-
  ```
-  + 采分点：说明了objdump，nm，file的大致用途，说明了系统调用的具体含义
-  - 答案没有涉及上述两个要点；（0分）
-  - 答案对上述两个要点中的某一个要点进行了正确阐述（1分）
-  - 答案对上述两个要点进行了正确阐述（2分）
-  - 答案除了对上述两个要点都进行了正确阐述外，还进行了扩展和更丰富的说明（3分）
- 
+ objdump：查看（可执行的）目标文件的构成的命令，包括输出目标文件的数据组织、段概括、符号表、指定的段信息、反汇编等。
+ nm：主要针对列出和查看目标文件的符号表，例如查找符号在哪个库中被定义、输出所有调试符号等。
+ file：检测文件类型的命令。
+ 在Linux中，用户程序不能直接使用I/O硬件，必须通过系统调用。系统调用是操作系统提供的接口，代表用户程序完成对硬件的操作，起到保护硬件的作用。对用户程序来说，系统调用是硬件操作的抽象接口，用户程序不需知道具体的硬件类型，操作细节。
  ```
  
  1. 通过调试[lab1_ex1](https://github.com/chyyuu/ucore_lab/blob/master/related_info/lab1/lab1-ex1.md)了解Linux应用的系统调用执行过程。(w2l1)
