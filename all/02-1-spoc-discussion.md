@@ -50,6 +50,8 @@
  
 
  ```
+ strace是用来跟踪进程执行时的系统调用和所接收的信号。以下是该程序使用的系统调用。
+ 
 execve("./lab-ex0", ["./lab-ex0"], [/* 73 vars */]) = 0
 brk(0)                                  = 0xd61000
 access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
@@ -79,6 +81,11 @@ stat(0x1, hello world
 {st_mode=021225430647, st_size=140735514292710, ...}) = 12
 exit_group(12)                          = ?
 +++ exited with 12 +++
+
+Linux通过int 0x80来系统调用。
+系统调用前，将系统调用号存入eax，其他参数存入其他寄存器中。
+之后触发中断，跳转到内核态处理系统调用的程序，根据eax再掉转到write程序段，write函数读取参数完成任务后将返回值存入eax，
+最后返回用户态，用户程序继续执行。
  ```
  
 ## 3.5 ucore系统调用分析
