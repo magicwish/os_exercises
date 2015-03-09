@@ -50,23 +50,35 @@
  
 
  ```
-% time     seconds  usecs/call     calls    errors syscall
------- ----------- ----------- --------- --------- ----------------
- 24.07    0.000097          24         4           mprotect
- 19.35    0.000078          11         7           mmap
- 11.17    0.000045          45         1           brk
- 10.67    0.000043          22         2           fstat
-  8.44    0.000034          34         1           stat
-  7.94    0.000032          16         2           open
-  7.44    0.000030          10         3         3 access
-  6.95    0.000028          28         1           munmap
-  1.49    0.000006           6         1           execve
-  1.24    0.000005           5         1           read
-  0.74    0.000003           2         2           close
-  0.50    0.000002           2         1           arch_prctl
------- ----------- ----------- --------- --------- ----------------
-100.00    0.000403                    26         3 total
-
+execve("./lab-ex0", ["./lab-ex0"], [/* 73 vars */]) = 0
+brk(0)                                  = 0xd61000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f09090e3000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=93381, ...}) = 0
+mmap(NULL, 93381, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f09090cc000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320\37\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1845024, ...}) = 0
+mmap(NULL, 3953344, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0908afd000
+mprotect(0x7f0908cb8000, 2097152, PROT_NONE) = 0
+mmap(0x7f0908eb8000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bb000) = 0x7f0908eb8000
+mmap(0x7f0908ebe000, 17088, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f0908ebe000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f09090cb000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f09090c9000
+arch_prctl(ARCH_SET_FS, 0x7f09090c9740) = 0
+mprotect(0x7f0908eb8000, 16384, PROT_READ) = 0
+mprotect(0x600000, 4096, PROT_READ)     = 0
+mprotect(0x7f09090e5000, 4096, PROT_READ) = 0
+munmap(0x7f09090cc000, 93381)           = 0
+stat(0x1, hello world
+{st_mode=021225430647, st_size=140735514292710, ...}) = 12
+exit_group(12)                          = ?
++++ exited with 12 +++
  ```
  
 ## 3.5 ucore系统调用分析
