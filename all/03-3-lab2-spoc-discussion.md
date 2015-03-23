@@ -118,8 +118,9 @@ va 0xcd82c07c, pa 0x0c20907c, pde_idx 0x00000336, pde_ctx  0x00037003, pte_idx 0
 
 - [x]  
 
-> answer
+> 编写了一个<a href = "https://github.com/magicwish/os_exercises/tree/master/code/03-3-lab2-spoc-discussion-analyseAddr">C程序</a>进行处理。
 ```
+answer:
 va 0xc2265b1f, pa 0x0d8f1b1f, pde_idx 0x00000308, pde_ctx 0x00000009, pte_idx 0x00000265, pte_ctx 0x0000d8f1
 va 0xcc386bbc, pa 0x0414cbbc, pde_idx 0x00000330, pde_ctx 0x00000031, pte_idx 0x00000386, pte_ctx 0x0000414c
 va 0xc7ed4d57, pa 0x07311d57, pde_idx 0x0000031f, pde_ctx 0x00000020, pte_idx 0x000002d4, pte_ctx 0x00007311
