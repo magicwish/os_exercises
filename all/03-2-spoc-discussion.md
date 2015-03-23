@@ -72,9 +72,10 @@ Virtual Address 390e
 Virtual Address 748b
 ```
 
-编写了一个[C程序]（https://github.com/magicwish/os_exercises/tree/master/code/03-3-lab2-spoc-discussion-analyseAddr)进行处理。
-答案：
+编写了一个<a href="https://github.com/magicwish/os_exercises/tree/master/code/03-3-lab2-spoc-discussion-analyseAddr">C程序</a>进行处理。
+
 ```
+答案：
 Virtual Address 7570:
   --> pde index:0x1d  pde contents:(valid 1, pfn 0x33)
     --> pte index:0xb  pte contents:(valid 0, pfn 0x7f)
