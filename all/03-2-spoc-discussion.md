@@ -72,7 +72,8 @@ Virtual Address 390e
 Virtual Address 748b
 ```
 
-比如答案可以如下表示：
+编写了一个[C程序]（https://github.com/magicwish/os_exercises/tree/master/code/03-3-lab2-spoc-discussion-analyseAddr)进行处理。
+答案：
 ```
 Virtual Address 7570:
   --> pde index:0x1d  pde contents:(valid 1, pfn 0x33)
