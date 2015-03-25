@@ -135,9 +135,7 @@ Virtual Address 1e6f(0 001_11 10_011 0_1111):
       --> To Disk Sector Address 0x2cf(0001011001111) --> Value: 1c
 ```
 
->>编写了一个
-<a href="https://github.com/magicwish/os_exercises/tree/master/code/04-1-spoc-discussion-vmanage">C程序</a>
-来处理。
+>>编写了一个<a href="https://github.com/magicwish/os_exercises/tree/master/code/04-1-spoc-discussion-vmanage">C程序</a>来处理。
 ```
 Answer:
 
