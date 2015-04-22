@@ -50,7 +50,7 @@
 
 (1)(spoc) 理解并完善调度算法
 
-- 补全了[scheduler-homework.py](../src/06-1-spoc/scheduler-homework.py)
+- <a href="https://github.com/magicwish/os_exercises/tree/master/code/06-1-spoc-discussion-scheduler">code</a>
 
 实现3种调度算法（SJF，FIFO，RR），可基于python, ruby, C, C++，LISP等模拟实现，并给出测试。请参考[scheduler-homework.py](https://github.com/chyyuu/ucore_lab/blob/master/related_info/lab6/scheduler-homework.py)代码或独自实现。
 最后统计采用不同调度算法的每个任务的相关时间和总体的平均时间：
