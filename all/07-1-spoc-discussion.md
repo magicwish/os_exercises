@@ -38,6 +38,13 @@
 
 1. （spoc）阅读[简化x86计算机模拟器的使用说明](https://github.com/chyyuu/ucore_lab/blob/master/related_info/lab7/lab7-spoc-exercise.md)，理解基于简化x86计算机的汇编代码。
 
+了解了x86.py的使用方法, 并且阅读了程序`loop.s`和`looping-race-nolock.s`
+几个参数如`-i`为中断频率, `-c`可以观察变量运行情况
+
+loop.s 就是一个简单的使用寄存器的循环.
+
+而`looping-race-nolock.s`则是在内存地址2000出记录了循环次数, 通过每次+1
+
 2. （spoc)了解race condition. 进入[race-condition代码目录](https://github.com/chyyuu/ucore_lab/tree/master/related_info/lab7/race-condition)。
 
  - 执行 `./x86.py -p loop.s -t 1 -i 100 -R dx`， 请问`dx`的值是什么？
